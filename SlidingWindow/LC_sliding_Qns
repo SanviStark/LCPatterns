@@ -1,0 +1,37 @@
+159 :  Longest Substring with At Most Two Distinct Characters
+
+1. keep two index (left and right)
+2. maintain in a dictionary (character| rightIndex)
+3. 
+
+class Solution:
+    def lengthOfLongestSubstringTwoDistinct(self, s: str) -> int:
+        
+        if len(s) < 3:
+            return len(s)
+        
+        dict1 = {}
+
+        left , right = 0 , 0
+        maxlen = 0
+        
+        while right < len(s):
+            
+            c = s[right]
+            dict1[c] = right
+            right += 1
+                
+            if len(dict1) == 3:
+                
+                # delete the left most character
+                del_index = min(dict1.values())
+                del dict1[s[del_index]]
+                
+                # move left pointer of the sliding window
+                left = del_index + 1
+                
+            
+            maxlen = max(maxlen, right -left)
+        
+        return maxlen
+                
