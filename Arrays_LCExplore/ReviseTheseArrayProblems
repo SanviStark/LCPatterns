@@ -1,0 +1,38 @@
+Duplicate Zeros
+Given a fixed-length integer array arr, duplicate each occurrence of zero, shifting the remaining elements to the right.
+
+Note that elements beyond the length of the original array are not written. Do the above modifications to the input array in place and do not return anything.
+
+https://www.youtube.com/watch?v=io3N5YTFbxM
+
+class Solution:
+    def duplicateZeros(self, arr: List[int]) -> None:
+        """
+        Do not return anything, modify arr in-place instead.
+        """
+        n = len(arr)
+        zeros = 0
+        
+        for num in arr:
+            if num == 0:
+                zeros += 1
+                
+        
+        i = n -1
+        j = n +zeros -1
+        
+        while i != j:
+            
+            self.insert(arr, i, j)
+            j = j-1
+            
+            if arr[i] == 0:
+                
+                self.insert(arr, i, j)
+                j = j-1
+            
+            i = i-1
+            
+    def insert(self, arr, i, j):
+        if j < len(arr):
+            arr[j] = arr[i]
