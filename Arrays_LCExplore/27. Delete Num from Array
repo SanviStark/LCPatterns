@@ -1,4 +1,5 @@
 Important! 27 and 283 are similar problems (please revise by doing without seeing these)
+PS: Also, 905. Sort Array By Parity is similar and very easy once you do the above two problems (same pattern)
 
 27. Remove element 'val' from an array nums. modify in place and return the length k that is the size of the new array.
 we dont care about the elements beyond this length (so you could leave existing values as-is)
@@ -47,7 +48,9 @@ class Solution:
                 k += 1
         
         
-            
+  905. Sort Array By Parity
+ 
+ 
         
         
  
