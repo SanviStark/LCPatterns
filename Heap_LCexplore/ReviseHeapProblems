@@ -1,6 +1,13 @@
 1337. The K Weakest Rows in a Matrix 
 
 Time complexity: O(m . (n + log(m)))
+
+--> first we are iterating through matrix to calculate sum of 1's --> O(m . n)
+--> Second, we are sorting the strengths (which is an array of length m) --> O(m log n)
+
+adding these two --> O(m . n ) + O(m log n) 
+                   = O(m(n + log n))
+
 https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
 
 You are given an m x n binary matrix mat of 1's (representing soldiers) and 0's (representing civilians). The soldiers are positioned in front of the civilians. That is, all the 1's will appear to the left of all the 0's in each row.
